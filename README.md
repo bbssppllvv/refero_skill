@@ -1,6 +1,6 @@
 # Refero Design Skill
 
-Research-First design methodology. Teaches AI to create professional UI/UX by researching real products first — avoiding generic "AI slop" designs.
+Research-First design methodology powered by [Refero](https://refero.design) — a catalog of 150K+ screens and flows from real products. Teaches AI to create professional UI/UX by researching real designs first, avoiding generic "AI slop".
 
 ## Install
 
@@ -8,7 +8,7 @@ Research-First design methodology. Teaches AI to create professional UI/UX by re
 npx skills add https://github.com/bbssppllvv/refero_skill
 ```
 
-Requires [Refero MCP](https://refero.design) — 150K+ screens and flows from real products.
+Requires Refero MCP server.
 
 ---
 
