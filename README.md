@@ -1,12 +1,14 @@
 # Refero Design Skill
 
-**Give your AI agent access to the world's best UX/UI.**
+**Make your AI agent design like a senior product designer.**
 
-[Refero](https://refero.design) — 150K+ screens and 6K+ flows from top products. This skill teaches AI to research before designing, replacing generic output with patterns from Stripe, Linear, Notion, and thousands more.
+When AI creates UI, it draws from generic training data — the result looks "AI-generated". This skill changes that: before designing anything, your agent researches [Refero](https://refero.design)'s library of 150K+ screens and 6K+ flows from Stripe, Linear, Notion, and thousands of top products.
 
-- **Research, don't guess** — agent explores real products before every design decision
-- **Specific, not generic** — actual solutions from companies that nailed it
-- **Craft that ships** — typography, color, spacing based on industry standards
+**The difference:**
+- Without skill: AI guesses based on generic patterns → forgettable UI
+- With skill: AI researches real products first → designs grounded in what actually works
+
+Works with Claude Code, Cursor, Gemini, Lovable, and other AI tools that support MCP.
 
 ## Install
 
@@ -14,7 +16,7 @@
 npx skills add https://github.com/bbssppllvv/refero_skill
 ```
 
-Requires Refero MCP server.
+Requires Refero MCP server (connects your AI to Refero's design library).
 
 ---
 
