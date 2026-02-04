@@ -1,6 +1,6 @@
 # Refero Design Skill
 
-Research-First design methodology powered by [Refero](https://refero.design) — a catalog of 150K+ screens and flows from real products. Teaches AI to create professional UI/UX by researching real designs first, avoiding generic "AI slop".
+[Refero](https://refero.design) is a design inspiration platform — 150K+ screens and flows from the best products. This skill + MCP server bring Refero's library to AI agents, enabling research-driven design based on real industry patterns.
 
 ## Install
 
@@ -31,7 +31,7 @@ claude mcp add --transport http refero https://api.refero.design/v1/mcp --header
 gemini mcp add --transport http refero https://api.refero.design/v1/mcp --header "Authorization: <token>"
 ```
 
-**Cursor:** Add to `.cursor/mcp.json` in your project:
+**Cursor:** Add to `.cursor/mcp.json`:
 ```json
 {
   "mcpServers": {
@@ -71,7 +71,7 @@ git clone https://github.com/bbssppllvv/refero_skill.git .cursor/skills/refero-d
 <details>
 <summary>What's inside</summary>
 
-- **SKILL.md** — Methodology: Discovery → Research → Analyze → Design → Implement
+- **SKILL.md** — Research-First methodology: Discovery → Research → Analyze → Design → Implement
 - **references/** — typography, color, motion, icons, craft-details, anti-ai-slop, mcp-tools, example-workflow
 
 </details>
