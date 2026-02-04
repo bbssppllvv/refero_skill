@@ -1,8 +1,19 @@
 # Refero Design Skill
 
-Design with data, not defaults.
+**Design with data, not defaults.**
 
-AI generates UI from training data averages. This skill connects your agent to [Refero](https://refero.design) — 150K screens and 6K flows from products like Stripe, Linear, and Notion. Before designing, your agent researches what actually ships.
+Every AI agent has the same problem: it draws UI from training data averages. The result? Generic layouts, safe color choices, patterns you've seen a thousand times. Design that looks "AI-generated."
+
+This skill changes that.
+
+Before creating anything, your agent researches [Refero](https://refero.design) — a library of 150,000+ screens and 6,000+ flows from the world's best products. Stripe's checkout. Linear's onboarding. Notion's settings. The patterns that actually convert, retain, and delight.
+
+**The shift:**
+- From guessing → to researching
+- From "best practices" → to specific solutions that shipped
+- From generic → to grounded in what top products actually do
+
+Your agent stops generating. It starts designing with evidence.
 
 ## Install
 
@@ -10,7 +21,7 @@ AI generates UI from training data averages. This skill connects your agent to [
 npx skills add https://github.com/bbssppllvv/refero_skill
 ```
 
-Requires Refero MCP.
+Requires Refero MCP to connect your agent to the design library.
 
 ---
 
