@@ -7,19 +7,21 @@ This skill teaches AI agents to create professional UI/UX by researching real pr
 ## Installation
 
 ```bash
-npx skills add https://github.com/bbssppllvv/refero_skill --agent <agent-name>
+npx skills add https://github.com/bbssppllvv/refero_skill
 ```
-
-Where `<agent-name>` is: `claude-code`, `cursor`, `codex`, etc.
 
 <details>
-<summary>Alternative: manual installation</summary>
+<summary>Troubleshooting & manual install</summary>
 
+If skill is not recognized, specify your agent explicitly:
 ```bash
-git clone https://github.com/bbssppllvv/refero_skill.git .<agent>/skills/refero-design
+npx skills add https://github.com/bbssppllvv/refero_skill --agent cursor
 ```
 
-Paths by agent: `.claude/skills/`, `.cursor/skills/`, `.codex/skills/`
+Or clone directly:
+```bash
+git clone https://github.com/bbssppllvv/refero_skill.git .cursor/skills/refero-design
+```
 
 </details>
 
