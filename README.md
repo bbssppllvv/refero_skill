@@ -6,14 +6,24 @@ Every AI agent has the same problem: it draws UI from training data averages. Th
 
 This skill changes that.
 
-Before creating anything, your agent researches [Refero](https://refero.design) — a library of 150,000+ screens and 6,000+ flows from the world's best products. Stripe's checkout. Linear's onboarding. Notion's settings. The patterns that actually convert, retain, and delight.
+## What it does
 
-**The shift:**
-- From guessing → to researching
-- From "best practices" → to specific solutions that shipped
-- From generic → to grounded in what top products actually do
+**Research.** Before creating anything, your agent searches [Refero](https://refero.design) — 150,000+ screens and 6,000+ flows from products like Stripe, Linear, and Notion. Not generic best practices. Specific solutions that shipped.
 
-Your agent stops generating. It starts designing with evidence.
+**Craft.** The skill includes deep guides on typography, color, spacing, motion, and icons — the details that separate polished products from rough ones. Letter-spacing rules. Color token systems. Animation timing. The stuff AI usually gets wrong.
+
+**Anti-slop.** Explicit rules to avoid the "AI look": no default indigo, no blob backgrounds, no generic hero layouts. Your agent learns what makes design feel human and intentional.
+
+**Methodology.** A complete workflow from discovery questions through research, analysis, and implementation — with quality gates and side-by-side testing against references.
+
+## The shift
+
+| Without | With |
+|---------|------|
+| Guesses from training data | Researches 150K+ real screens |
+| Generic "best practices" | Specific patterns that convert |
+| Default colors and layouts | Intentional craft decisions |
+| Looks AI-generated | Looks designed |
 
 ## Install
 
@@ -77,6 +87,28 @@ Or clone:
 ```bash
 git clone https://github.com/bbssppllvv/refero_skill.git .cursor/skills/refero-design
 ```
+
+</details>
+
+<details>
+<summary>What's inside</summary>
+
+**SKILL.md** — Research-First methodology
+- Discovery questions before designing
+- Research strategies and query patterns  
+- Analysis frameworks and steal lists
+- Design craft summaries
+- Quality gates and validation
+
+**Reference guides:**
+- `typography.md` — Scale, pairing, letter-spacing, line-height
+- `color.md` — Palettes, tokens, dark mode, contrast
+- `motion.md` — Timing, easing, micro-interactions
+- `icons.md` — Sizing, optical corrections, libraries
+- `craft-details.md` — Focus states, forms, accessibility
+- `anti-ai-slop.md` — Avoiding the generic AI look
+- `mcp-tools.md` — Refero API reference
+- `example-workflow.md` — Complete design walkthrough
 
 </details>
 
