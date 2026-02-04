@@ -2,6 +2,12 @@
 
 [Refero](https://refero.design) is a design inspiration platform — 150K+ screens and flows from the best products. This skill + MCP server bring Refero's library to AI agents, enabling research-driven design based on real industry patterns.
 
+**Why use it:**
+- **Grounded in reality** — designs based on proven patterns from Stripe, Linear, Notion, and 1000s more
+- **No more "AI slop"** — specific references replace generic solutions
+- **Professional craft** — typography, color, spacing, motion done right
+- **Faster research** — AI finds relevant examples in seconds, not hours
+
 ## Install
 
 ```bash
