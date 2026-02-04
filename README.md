@@ -1,12 +1,14 @@
 # Refero Design Skill
 
-[Refero](https://refero.design) is a design inspiration platform — 150K+ screens and flows from the best products. This skill + MCP server bring Refero's library to AI agents, enabling research-driven design based on real industry patterns.
+[Refero](https://refero.design) is a design inspiration platform — 150K+ screens and 6K+ flows from the best products.
 
-**Why use it:**
-- **Grounded in reality** — designs based on proven patterns from Stripe, Linear, Notion, and 1000s more
-- **No more "AI slop"** — specific references replace generic solutions
-- **Professional craft** — typography, color, spacing, motion done right
-- **Faster research** — AI finds relevant examples in seconds, not hours
+AI agents have generic design knowledge. This skill gives them **specific knowledge** — real patterns, real flows, real solutions from companies like Stripe, Linear, Notion, and thousands more.
+
+**What changes:**
+- Agent researches 150K+ screens before designing, not guessing from training data
+- Decisions grounded in how top products actually solve problems
+- User flows based on real onboarding, checkout, settings patterns
+- Visual craft informed by industry standards, not AI defaults
 
 ## Install
 
