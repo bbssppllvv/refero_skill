@@ -36,37 +36,7 @@ git clone https://github.com/bbssppllvv/refero_skill.git .cursor/skills/refero-d
   - `craft-details.md` — Focus states, forms, accessibility
   - `anti-ai-slop.md` — How to avoid generic AI-generated look
   - `mcp-tools.md` — Refero MCP tools reference
-  - `example-workflow.md` — Complete fintech onboarding example
-
-## Requirements
-
-This skill uses **Refero MCP** — a design research tool with 150K+ screens and flows from real products.
-
-### Get Refero MCP
-
-1. Go to [refero.design](https://refero.design)
-2. Sign up for API access
-3. Add to your MCP config:
-
-```json
-{
-  "mcpServers": {
-    "refero": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/refero-mcp"],
-      "env": {
-        "REFERO_API_KEY": "your-api-key"
-      }
-    }
-  }
-}
-```
-
-Config locations:
-- **Claude Code**: `~/.claude/claude_desktop_config.json`
-- **Cursor**: `.cursor/mcp.json` in your project
-
-Without Refero MCP, the skill's research tools (`search_screens`, `get_screen`, etc.) won't be available.
+  - `example-workflow.md` — Complete SaaS churn example
 
 ## Usage
 
@@ -77,6 +47,44 @@ Once installed, the skill activates when you ask to design, build, or create UI.
 3. Analyze patterns and extract tactics
 4. Apply craft principles (typography, color, spacing, motion)
 5. Implement with quality checks
+
+---
+
+<details>
+<summary>Don't have Refero MCP yet? Setup instructions</summary>
+
+This skill requires **Refero MCP** — a design research tool with 150K+ screens and flows from real products.
+
+### 1. Get your token
+
+Go to [refero.design](https://refero.design) and sign up for API access.
+
+### 2. Add MCP to your tool
+
+**Claude Code** (terminal):
+```bash
+claude mcp add --transport http refero https://api.refero.design/v1/mcp --header "Authorization: <token>"
+```
+
+**Cursor**: [One-click install](https://cursor.com/docs/context/mcp/install-links)
+
+**Gemini CLI** (terminal):
+```bash
+gemini mcp add --transport http refero https://api.refero.design/v1/mcp --header "Authorization: <token>"
+```
+
+**Lovable**:
+1. Settings → Connectors → Personal connectors
+2. Click "New MCP server"
+3. Server name: `Refero`
+4. Server URL: `https://api.refero.design/v1/mcp`
+5. Select "Authorization with Bearer token" and enter your token
+
+**Other tools** — use these settings:
+- HTTP URL: `https://api.refero.design/v1/mcp`
+- Bearer token: `<token>`
+
+</details>
 
 ## License
 
