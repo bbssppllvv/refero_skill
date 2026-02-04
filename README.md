@@ -4,9 +4,9 @@
 
 [Refero](https://refero.design) — 150K+ screens and 6K+ flows from top products. This skill teaches AI to research before designing, replacing generic output with patterns from Stripe, Linear, Notion, and thousands more.
 
-- 🔍 **Research, don't guess** — agent explores real products before every design decision
-- 🎯 **Specific, not generic** — actual solutions from companies that nailed it
-- ✨ **Craft that ships** — typography, color, spacing based on industry standards
+- **Research, don't guess** — agent explores real products before every design decision
+- **Specific, not generic** — actual solutions from companies that nailed it
+- **Craft that ships** — typography, color, spacing based on industry standards
 
 ## Install
 
