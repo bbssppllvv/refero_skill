@@ -9,7 +9,7 @@ Don't guess—know. Study real products, learn from the best, then design with c
 
 **But remember:** References are just ingredients. Your product needs its own flavor. Use Refero for a rock-solid foundation (80%), then breathe **soul** into it (20%)—the distinctive choices that make your design memorable.
 
-**Mindset:** Research isn't copying the average. It's understanding WHY things work, finding CLEVER solutions others missed, collecting CONVERSION tactics, and hunting for SOUL. Generic design copies patterns. Great design understands psychology.
+**Mindset:** Research isn't copying the average. It's finding what the TOP 10% do that others don't. Generic findings ("offer discount", "show social proof") are table stakes—hunt for specific tactics with exact copy, exact numbers, exact conditions. Generic design copies patterns. Great design understands psychology.
 
 > Always ask: "If I showed this to 10 users tomorrow, what would they remember?"
 
@@ -189,6 +189,7 @@ Search results contain brief descriptions only. **You MUST call `get_screen` for
 
 - Full detailed description (much more than search snippet)
 - Complete metadata (company, category, tags)
+- **Capture exact details:** specific copy, numbers, conditions, timing — not generic descriptions
 - `include_similar: true` — returns visually similar screens. Found one good example? Similar screens = more good examples fast.
 - `image_size`: use `"none"` (default) for text analysis, `"thumbnail"` or `"full"` for visual inspiration.
 
@@ -305,6 +306,7 @@ Research is done when you can answer YES to all:
 - [ ] Reviewed 50+ screens or flows in search results
 - [ ] Called `get_screen` for 5-10 best screens (deep analysis)
 - [ ] Found 5+ clever tactics worth adapting (not common—clever)
+- [ ] Each finding has EXACT details (copy/numbers/conditions), not generic descriptions
 - [ ] Found at least 1 thing that surprised you
 - [ ] Can describe "what the best products do and why"
 - [ ] Can answer: "What do most products do?" and "What do the best ones do differently?"
@@ -321,13 +323,13 @@ Research is done when you can answer YES to all:
    - 3 queries, all variations of "pricing page"
    - Read 15 search descriptions
    - Skipped get_screen calls
-   - Copied the first pattern you saw
+   - Findings: "offer discount", "show value", "collect feedback" (generic)
 
 ✅ Real research:
    - 7+ queries across different angles
    - Reviewed 50+ screens in search results
    - Called get_screen for 8 best finds
-   - Found 5 clever tactics from different companies
+   - Findings with EXACT details: "Copy.ai shows 60% discount ONLY after 'too expensive' reason, with exact copy 'We'd hate to lose you over price' and 24h countdown"
    - Can explain "why" behind each pattern
 ```
 
@@ -355,8 +357,11 @@ STRUCTURE PATTERNS:
   • Details: [shadows, borders, radii, micro-details]
   • Vibe: [premium/playful/minimal/technical]
 
-✨ CLEVER FINDS (things to steal):
-  • [Product] — [specific tactic] → [why it works]
+✨ CLEVER FINDS (must be specific — not generic "best practices"):
+  • [Product] — [EXACT tactic: copy, numbers, conditions] → [WHY it works psychologically]
+  
+  ❌ BAD: "Spotify — farewell playlist" (too vague)
+  ✅ GOOD: "Spotify — generates personalized 'Goodbye Mix' with user's top 10 songs, shown on final cancel screen with 'Take it with you' CTA"
 
 🧠 CONVERSION TACTICS:
   • [trust signals / urgency / social proof]
@@ -428,6 +433,10 @@ Don't just document patterns—capture specific tactics to adapt:
 | Brilliant | Timeline showing trial | Makes process tangible | Visual trial explainer |
 
 **STOP: If this table has fewer than 5 rows, go back to research.**
+
+**Be specific, not vague:**
+- ❌ "Linear — clean design" (not actionable)
+- ✅ "Linear — 13px/20px body text, -0.01em tracking, 48px section gaps, #5E6AD2 accent at 8% opacity for hover states"
 
 Categories to cover (pick relevant ones):
 - [ ] Trust signal (social proof, guarantee, security)
@@ -659,7 +668,7 @@ Target: Match or exceed in 3/4 criteria:
 
 ## Example
 
-For a complete walkthrough (fintech onboarding), see [references/example-workflow.md](references/example-workflow.md).
+For a complete walkthrough (SaaS churn reduction), see [references/example-workflow.md](references/example-workflow.md).
 
 ---
 

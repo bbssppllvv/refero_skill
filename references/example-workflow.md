@@ -1,26 +1,28 @@
-# Example Workflow: Fintech Onboarding
+# Example Workflow: SaaS Churn Reduction
 
-A complete walkthrough showing how to apply the Research-First Design methodology.
+A complete walkthrough showing how to apply the Research-First Design methodology to reduce churn rate for a SaaS product — with focus on finding unique Win Strategies, not just best practices.
 
 ---
 
 ## Phase 0: Discovery
 
+**Context:** TaskFlow — project management SaaS for small teams. Monthly churn rate at 8%, goal is to reduce to 4%. Scope: cancellation flow redesign + retention strategies.
+
 **Questions answered:**
 
 | Question | Answer |
 |----------|--------|
-| WHAT are we building? | Onboarding flow, iOS, 5-7 screens |
-| WHO is this for? | Millennials, first-time investors, moderate tech-savvy |
-| WHAT should users accomplish? | Set up account, complete KYC, fund account |
-| WHAT feeling should it evoke? | Trustworthy yet modern, approachable |
-| WHAT JOB is the user hiring this? | "Get me started without friction" + "Convince me to trust you" |
-| WHAT objections might they have? | "Is my money safe?", "Why do you need my SSN?", "How long will this take?" |
-| WHAT should they remember tomorrow? | "That was surprisingly easy and I felt safe" |
-| ANY constraints? | iOS-first, must include KYC, brand colors exist |
+| WHAT are we building? | Cancellation flow (web), retention interventions, win-back touchpoints |
+| WHO is this for? | Team admins who manage billing, typically 28-45, decision-makers |
+| WHAT should users accomplish? | If leaving: cancel cleanly with minimal friction. If saveable: find an alternative (pause, downgrade, discount) |
+| WHAT feeling should it evoke? | Respectful, not desperate. "We value you" not "Please don't go!" |
+| WHAT JOB is the user hiring this? | "Let me leave without guilt" OR "Help me find a reason to stay" |
+| WHAT objections might they have? | "They're going to make this hard", "I'll lose my data", "They'll spam me" |
+| WHAT should they remember tomorrow? | "That was surprisingly easy, and they actually tried to help" |
+| ANY constraints? | Must work on web, integrate with Stripe billing, legal requirement to allow cancellation |
 
 **Design Brief:**
-> "Onboarding flow for millennial first-time investors that helps them set up and fund their account while feeling trustworthy yet modern. The user's job: get started without friction while building trust. Main objection: 'Is my money safe?' and 'Why do you need my personal info?'. They should remember: 'That was surprisingly easy.' Constraints: iOS-first, must include KYC."
+> "Redesign the cancellation experience for TaskFlow team admins to reduce churn from 8% to 4%. The flow should feel respectful and helpful — offering genuine alternatives (pause, downgrade, discount) without being manipulative. Users who do cancel should leave with a positive impression and clear path to return."
 
 ---
 
@@ -28,111 +30,125 @@ A complete walkthrough showing how to apply the Research-First Design methodolog
 
 ### Focus Identified
 
-**By Challenge:** Building trust (fintech) + Reducing friction (onboarding)
-→ Focus on: security signals, credentials, progressive disclosure, smart defaults
+**By Challenge:** Reducing churn (retention) + Building trust during exit
+→ Focus on: retention offers, pause options, feedback collection, graceful exits
 
-**By Goal:** UX/Flow optimization
-→ Focus on: step count, friction points, error handling, save states
+**By Goal:** UX/Flow optimization (improving journeys)
+→ Focus on: step count, friction points, decision points, recovery paths
 
 ### Search Loop Executed
 
 ```
-1. BROAD: "onboarding fintech" → 45 results, see patterns
-2. SPECIFIC: "KYC verification flow" → 28 results, identity patterns
-3. COMPANY: "Revolut onboarding" → 12 results, best-in-class
-4. COMPANY: "Wise signup" → 15 results, trust patterns
-5. ELEMENT: "progress indicator onboarding" → 32 results
-6. CROSS-PLATFORM: "fintech onboarding web" → 18 results, fresh ideas
-7. ADJACENT: "healthcare onboarding" → 22 results (also needs trust!)
+1. BROAD: "cancellation flow subscription" → 10 flows (web)
+2. SPECIFIC: "cancel subscription retention" → 25 flows
+3. COMPANY: "Spotify cancel" → detailed 8-step flow
+4. ELEMENT: "pause subscription" → 921 screens
+5. ELEMENT: "retention offer discount modal" → 1000+ screens
+6. ADJACENT: "win back reactivate comeback" → fresh patterns
+7. iOS SPECIFIC: "special offer discount popup" → gamification patterns
+8. DEEP: get_flow for Clay, ElevenLabs, Train Fitness
 ```
 
-**Queries executed:**
-- `search_flows("onboarding fintech", platform="ios", limit=25)` → 45 results
-- `search_flows("kyc verification", limit=25)` → 28 results
-- `search_screens("Revolut", platform="ios", limit=15)` → 12 results
-- `search_screens("Wise signup", limit=15)` → 15 results
-- `search_screens("progress indicator onboarding", limit=20)` → 32 results
-- `search_screens("fintech onboarding", platform="web", limit=20)` → 18 results
-- `search_flows("healthcare onboarding", limit=20)` → 22 results
+**Total: 200+ screens/flows reviewed, 8 deep dives**
 
-**Total: 172 screens/flows reviewed**
+### Deep Dive Results (EXACT Details)
 
-### Deep Dive (get_screen calls)
+**Clay (flow 5888) — 7-step cancellation:**
+- Step 2: "We're sorry to see you go" headline + 6 radio button reasons
+- Step 4: Retention offer shows ticket-style graphic with "25% OFF FOR LIFE"
+- Exact copy: "We'd love to share a special offer with you"
+- Three CTAs: "Accept This Offer" (primary), "Back", "Decline Offer" (secondary)
+- Step 5: Consequence screen lists EXACT features lost: "Unlimited contacts", "More frequent data enrichment", "Priority support"
+- Step 7: Confirmation shows purple accent text "You won't be billed again."
 
-Called `get_screen` with `include_similar: true` for 8 best finds:
-1. Revolut - Welcome sequence (clean, single focus)
-2. Wise - KYC explanation screen (trust-building copy)
-3. Robinhood - Progress steps (gamified)
-4. Mercury - Form design (spacious, professional)
-5. Cash App - Verification (casual, fast)
-6. Monzo - Security explanation (transparent)
-7. One Medical - Document upload (healthcare, trust patterns)
-8. Plaid - Bank connection (third-party trust)
+**ElevenLabs (flow 8714) — 6-step cancellation:**
+- Step 3: Shows THUMBNAILS of features being lost (not just text list)
+- Step 4: Multi-select feedback (CHECKBOXES, not radio) — can select "Low usage" AND "Product didn't meet needs"
+- Retention: "One time offer before you go!" with "Get 30% off your next month"
+- Final state: "Cancelled" badge in red, "$0" next payment, "Resume subscription" button visible
+
+**Train Fitness iOS (flow 7172):**
+- Retention modal: Star icon + "You're eligible for a special offer"
+- Uses native iOS subscription sheet (Edit Subscription)
+- Post-cancel: "Renew: 39,99 €/year" button with exact pricing shown
 
 ### Three Lenses Applied
 
 **Lens A: Structure**
-- All use single focus per screen
-- Progress indication: 60% use subtle bar, 30% numbered steps, 10% hidden
-- KYC typically 3-5 screens: info → document → selfie → processing
-- Average total flow: 6-8 screens before funded
+
+Flow patterns discovered:
+- 5-8 steps is standard (Clay: 7, ElevenLabs: 6, Spotify: 8)
+- Modal-based flows dominate (prevents accidental navigation away)
+- Consequence screen always BEFORE final confirm, not after
 
 **Lens B: Visual Craft**
-- Typography: Large headlines (28-32pt), generous line height
-- Color: Muted backgrounds, accent for CTAs only
-- Spacing: Very generous (24-32px between elements)
-- Details: Soft shadows, large radii (12-16px), subtle gradients
-- Vibe: Clean, spacious, confidence-inspiring
+
+- Headlines: 20-28px, bold, empathetic tone ("We're sorry to see you go")
+- Keep button: Primary color (green/blue), full-width or left position
+- Cancel button: Ghost/secondary, gray text, smaller
+- Feature loss: Uses checkmarks + thumbnail images (ElevenLabs), not just text bullets
 
 **Lens C: Conversion & Soul**
-- Hook: "Invest in minutes" / "Start with $1" / "No hidden fees"
-- Objections: Explain WHY before asking sensitive info (Wise does brilliantly)
-- Trust: Security badges, encryption mentions, "Bank-level security"
-- Unique: Revolut's minimal aesthetic, Cash App's casual tone
-- Microcopy: "This helps us protect your account" > "Required by law"
+
+| Company | EXACT Tactic | Why It Works |
+|---------|--------------|--------------|
+| Clay | "25% OFF FOR LIFE" ticket visual | Permanence ("for life") reduces "temporary fix" objection |
+| ElevenLabs | Thumbnail previews of features | Loss aversion — seeing the actual UI makes loss concrete |
+| BoldVoice | Strikethrough "$149.99" → "$99.99" | Anchoring + exact savings calculation visible |
+| TikTok Shop | "YOU WON THE BIGGEST DISCOUNT" | Gamification — reframes cancellation as winning |
 
 **For Flows:**
-- Step count: 6-8 screens average
-- Decision points: Plan selection, funding amount
-- Friction reducers: Camera for documents, autofill, skip options
-- Save states: All allow resume if interrupted
-- Error handling: Inline validation, clear retry paths
+- Step count: 5-8 screens (optimal is 6 — enough for retention without frustration)
+- Decision points: reason selection → offer → final confirm
+- Friction reducers: "Back" always visible, progress implicit
+- Recovery paths: "Resume subscription" shown immediately after cancel
 
 ### Research Summary
 
 ```
 📊 RESEARCH SUMMARY
 ────────────────────────────────────────
-Queries executed: 7 (172 total results)
-Screens analyzed: 52 total (8 full with get_screen, 44 search descriptions)
+Queries executed: 8 different angles (broad, company, element, adjacent)
+Flows analyzed: 8 full deep-dives with exact copy captured
+Screens analyzed: 200+ in search results
 
 STRUCTURE PATTERNS:
-  • Single focus per screen (universal)
-  • Progress bar at top, subtle (60% of references)
-  • KYC: explain benefit before asking
-  • 6-8 screens total before funded
+  • 5-8 step flow standard
+  • Modal-based, consequence screen before final confirm
+  • "Resume" button immediately visible post-cancel
 
 🎨 VISUAL INSPIRATION:
-  • Typography: Large headlines (28-32pt), generous leading
-  • Color: Muted backgrounds, single accent for CTAs
-  • Spacing: Very generous (24-32px gaps)
-  • Details: Soft shadows, 12-16px radii
-  • Vibe: Clean, spacious, confidence-inspiring
+  • Typography: 20-28px headlines, empathetic tone
+  • Color: Keep = Primary, Cancel = Ghost
+  • Details: Thumbnail previews of lost features (not just text)
+  • Vibe: Respectful, not desperate
 
-✨ CLEVER FINDS (things to steal):
-  • Wise — "This helps protect your account" before SSN (reframes requirement as benefit)
-  • Revolut — Single word per screen for key moments ("Welcome", "Almost there")
-  • Cash App — "$1 to start" removes mental barrier
-  • Monzo — "Your money is protected up to £85,000" specific = trustworthy
-  • One Medical — Document upload with camera guides (reduces retakes)
-  • Mercury — "Takes about 3 minutes" sets expectation upfront
+✨ WIN STRATEGIES (specific, not generic):
 
-🧠 CONVERSION TACTICS:
-  • Trust: Specific numbers ("256-bit encryption", "FDIC insured up to $250K")
-  • Friction: Explain time upfront, show progress, allow skip where possible
-  • Social proof: "Join 2M+ investors" early in flow
+  1. Clay — "25% OFF FOR LIFE" (not "25% off")
+     WHY: "For life" removes objection that it's a temporary fix
+     
+  2. ElevenLabs — Feature thumbnails in consequence screen
+     WHY: Seeing actual UI screenshots triggers stronger loss aversion than text list
+     
+  3. ElevenLabs — Multi-select checkboxes for reasons (not radio buttons)
+     WHY: Users often have 2-3 reasons; forcing single choice loses data + feels restrictive
+     
+  4. BoldVoice — "$149.99" strikethrough next to "$99.99"
+     WHY: Anchoring makes savings feel larger; exact dollar amount more persuasive than %
+     
+  5. TikTok — "YOU WON THE BIGGEST DISCOUNT" with coupon visual
+     WHY: Gamification reframes cancellation flow as reward, not loss
+     
+  6. ClassPass — "We'll send you a reminder 2 days before your trial ends"
+     WHY: Removes #1 anxiety (surprise charge) with specific timing
 
-❓ STILL NEED: Nothing critical — good coverage
+⚠️ OBVIOUS STUFF (table stakes, everyone does):
+  • "Offer a discount" — generic
+  • "Ask for cancellation reason" — generic
+  • "Show what you'll lose" — generic
+
+❓ STILL NEED: Win-back email timing (out of scope)
 ────────────────────────────────────────
 ```
 
@@ -142,80 +158,133 @@ STRUCTURE PATTERNS:
 
 ### Pattern Table
 
-| Aspect | Revolut | Wise | Robinhood | Mercury | **Our Choice** |
-|--------|---------|------|-----------|---------|----------------|
-| Progress | Hidden | Subtle bar | Numbered | Dots | **Subtle bar** (clean, non-intrusive) |
-| Tone | Minimal | Friendly | Gamified | Professional | **Friendly** (trust + approachable) |
-| Forms | Dense | Spacious | Minimal | Spacious | **Spacious** (premium, less anxiety) |
-| KYC framing | Required | Beneficial | Quick | Legal | **Beneficial** (Wise's approach) |
-| CTA style | Primary | Primary | Bold | Subtle | **Primary** (clear action) |
-| Time indication | None | Upfront | None | Upfront | **Upfront** (Mercury's "3 minutes") |
+| Aspect | Clay | ElevenLabs | BoldVoice | TikTok | **Our Choice** |
+|--------|------|------------|-----------|--------|----------------|
+| Discount framing | "25% OFF FOR LIFE" | "30% off next month" | "$50 off" exact | "$100 coupon" | **"$X off for life"** (permanence + exact $) |
+| Reason collection | Radio (single) | Checkbox (multi) | N/A | N/A | **Multi-select checkbox** |
+| Feature loss display | Text list | Thumbnails | N/A | N/A | **Thumbnails where possible** |
+| Offer language | "Special offer" | "One time offer" | "Gift just for you" | "You won" | **"One time offer"** (urgency without gamification) |
+| Cancel CTA | "Decline Offer" | "Cancel Subscription" | "Proceed to cancel" | "Shop now" | **"No thanks, continue cancelling"** |
 
-### Steal List (Required)
+### Steal List
 
-| Source | What | Why It Works | How I'll Use It |
-|--------|------|--------------|-----------------|
-| Wise | "This helps protect your account" before SSN | Reframes requirement as benefit, reduces resistance | Same placement before sensitive fields |
-| Mercury | "Takes about 3 minutes" on first screen | Sets expectation, reduces anxiety about unknown | Opening screen, honest time estimate |
-| Revolut | Single-word hero screens ("Welcome") | Creates breathing room, feels premium | Key transition moments |
-| Monzo | "Protected up to £85,000" | Specific number = credible, not vague "secure" | Footer during KYC, with actual FDIC amount |
-| Cash App | "$1 to start" | Removes mental barrier to funding | Funding screen, lowest possible amount shown |
-| One Medical | Camera guides for document | Reduces failed uploads, feels helpful | Document capture with alignment overlay |
+| Source | EXACT What | WHY It Works | How I'll Use It |
+|--------|-----------|--------------|-----------------|
+| Clay | "25% OFF FOR LIFE" ticket-style graphic | "For life" removes temp-fix objection; ticket visual = tangible value | Show "50% OFF FOR LIFE" after "too expensive" reason |
+| ElevenLabs | Screenshot thumbnails of lost features | Loss aversion stronger with visual; abstract list < concrete UI | Show mini-screenshots of dashboard, reports, integrations |
+| ElevenLabs | Multi-select checkboxes (not radio) | Users have multiple reasons; single choice loses insights | Replace radio with checkboxes, allow 1-3 selections |
+| BoldVoice | Strikethrough "$149.99" → "$99.99" with exact savings | Anchoring + specific dollars > percentage | Show "$24/mo → $12/mo (save $144/year)" |
+| TikTok | Scalloped coupon edge visual | Physical metaphor = perceived tangible value | Use coupon-style card for discount offer |
+| ClassPass | "Reminder 2 days before" specific timing | Removes #1 anxiety about surprise charges | Add "We'll remind you 2 days before any charge" |
+| Train Fitness | Exact pricing on "Renew" button | Removes friction to re-subscribe | Show "Reactivate: $24/mo" (not just "Reactivate") |
+| Spotify | "How likely to return?" NPS on final screen | Predicts win-back candidates | Add 1-10 scale on goodbye screen |
 
 **Categories covered:**
-- ✅ Trust signal (Monzo's specific protection amount)
-- ✅ Objection killer (Wise's "helps protect" framing)
-- ✅ Friction reducer (Mercury's time estimate, Cash App's low barrier)
-- ✅ Visual treatment (Revolut's breathing room)
-- ✅ Micro-detail (One Medical's camera guides)
-- ✅ Memorable element (Single-word hero moments)
+- ✅ Retention offer (permanent framing: "for life")
+- ✅ Objection killer (specific timing for charge reminder)
+- ✅ Friction reducer (multi-select, not forced single choice)
+- ✅ Visual treatment (thumbnails, coupon visual)
+- ✅ Micro-detail (strikethrough pricing, exact amounts)
+- ✅ Memorable element (NPS for win-back prediction)
 
 ---
 
 ## Phase 3: Design
 
-### Persuasion Layer (Filled Before Code)
+### Persuasion Layer
 
 | Element | Our Answer | Implementation |
 |---------|------------|----------------|
-| **Hook** (first 3 sec) | "Start investing in 3 minutes" | Hero headline + time indicator |
-| **Story arc** | Welcome → Trust → Setup → Verify → Fund → Success | Screen sequence |
-| **Objection killers** | 1. "Why SSN?" → "Protects your account" 2. "Is it safe?" → "FDIC $250K" 3. "How long?" → "3 minutes" | Inline copy at friction points |
-| **Trust signals** | FDIC insurance specific, encryption mention, "2M+ users" | KYC screens + footer |
-| **Urgency/Scarcity** | N/A — not appropriate for trust-focused fintech | Skip |
-| **The memorable thing** | Single-word breathing moments + surprisingly easy completion | "Welcome" / "Almost there" / "You're in" screens |
+| **Hook** (first 3 sec) | "Before you go — we have a one-time offer" | Modal headline after reason selection |
+| **Story arc** | Reason → Offer (conditional) → Consequences → Confirm → Goodbye | 5-6 screens |
+| **Objection killers** | 1. Price → $X off for life 2. Surprise charge → "2-day reminder" 3. Data loss → "Export anytime" | Inline on relevant screens |
+| **Trust signals** | "Reactivate anytime" + exact pricing on button | Confirm + Goodbye screens |
+| **Urgency/Scarcity** | "This offer expires in 24 hours" (only for discount) | Countdown on offer modal |
+| **The memorable thing** | Feature thumbnails + "for life" discount | Consequence + Offer screens |
 
 ### Typography System
 
-- Display: SF Pro Display, 32px, -0.02em tracking
-- H1: SF Pro, 24px, -0.01em tracking
-- Body: SF Pro, 17px (iOS default)
-- Caption: SF Pro, 13px, +0.01em tracking
-- Leading: 1.2 for headlines, 1.5 for body
+- Display: Inter/System, 28px, -0.02em tracking
+- H1: 20px, medium weight
+- Body: 16px, regular, 1.5 leading
+- Caption: 14px, secondary color (#666)
+- ALL CAPS labels: 12px, 0.06em tracking
 
 ### Color Palette
 
-- Background: #FAFAFA (warm white, not stark)
-- Text primary: #1A1A1A
-- Text secondary: #666666
-- Accent: Brand green (not default blue!)
-- Success: #22C55E
-- Error: #EF4444
+- Background: #FFFFFF / #121212 (dark mode)
+- Text primary: #1A1A1A / #FFFFFF
+- Text secondary: #666666 / #A0A0A0
+- Primary CTA (Keep): #22C55E (green)
+- Secondary CTA (Cancel): Ghost, #666666 text
+- Offer accent: #F59E0B (amber) — coupon/discount
+- Destructive: #EF4444 — final confirm only
 
 ### Spacing System
 
-- Base: 8px
+- Base unit: 8px
 - Scale: 8, 16, 24, 32, 48, 64
-- Section gap: 48px
+- Modal padding: 32px
+- Section gap: 24px
 - Element gap: 16px
-- Form field gap: 24px
 
 ### The Soul (20%)
 
-- **Bold visual choice:** Brand green accent, never blue
-- **Voice:** Second person, benefit-focused ("Your account is protected" not "We protect accounts")
-- **Memorable detail:** Single-word hero screens at transitions
-- **Micro-interaction:** Subtle scale on CTA tap (0.98, 90ms)
+- **Bold visual choice:** Coupon-style card with scalloped edge for discount offer
+- **Voice:** "We'd hate to lose you over price" (second person, empathetic)
+- **Memorable detail:** Feature thumbnails showing actual UI being lost
+- **Micro-interaction:** Checkmark animation when discount is applied
+
+### Output: Flow Architecture
+
+```
+STEP 1: Current Plan
+└── [Cancel subscription] link
+
+STEP 2: Reason Collection
+├── "Help us improve — why are you leaving?"
+├── ☑️ Checkboxes (multi-select, not radio):
+│   □ Too expensive for my needs
+│   □ Not using it enough  
+│   □ Missing features I need
+│   □ Found another tool
+│   □ My project ended
+│   □ Other
+├── Optional text area
+└── → Routes based on selection
+
+STEP 3: Retention Offer (conditional — only if "too expensive")
+├── Coupon-style card with scalloped edge
+├── "50% OFF FOR LIFE"
+├── Strikethrough: "$24/mo → $12/mo"
+├── "Save $144/year"
+├── Timer: "Offer expires in 23:59:42"
+├── [CLAIM THIS OFFER] amber button
+└── [No thanks, continue cancelling] ghost link
+
+STEP 4: Consequence Screen
+├── "Here's what you'll lose access to:"
+├── Feature thumbnails (not just text):
+│   [📊 Dashboard] [📈 Reports] [🔗 Integrations]
+├── "Your data will be saved for 30 days"
+├── [KEEP MY SUBSCRIPTION] green, full-width
+└── [Confirm cancellation] ghost, smaller
+
+STEP 5: Final Confirmation
+├── "Confirm cancellation"
+├── "Your access ends: [DATE]"
+├── "We'll remind you 2 days before any future charges"
+├── [KEEP SUBSCRIPTION] green
+└── [Yes, cancel my subscription] red text
+
+STEP 6: Goodbye + Win-back
+├── "You're all set"
+├── "Access until [DATE]"
+├── "The door is always open"
+├── [Reactivate: $24/mo] — exact pricing
+├── [Get feature updates] checkbox
+└── NPS: "How likely are you to try TaskFlow again?" [1-10]
+```
 
 ---
 
@@ -223,47 +292,53 @@ STRUCTURE PATTERNS:
 
 ### Build Checklist
 
-- [x] Semantic HTML/SwiftUI structure
-- [x] Design tokens for all values
-- [x] Progress bar component (subtle, top)
-- [x] Form fields with inline validation
-- [x] Camera overlay for document capture
-- [x] Loading states with copy ("Verifying...")
-- [x] Error states with clear recovery
-- [x] Save state (can resume if interrupted)
+- [x] Multi-select checkboxes for reasons (not radio)
+- [x] Conditional routing based on reason
+- [x] Coupon-style card with scalloped edge for discount
+- [x] "FOR LIFE" permanence framing
+- [x] Strikethrough pricing with exact savings
+- [x] 24h countdown timer on offer
+- [x] Feature thumbnails (actual UI screenshots)
+- [x] "2 days before" reminder copy
+- [x] Exact pricing on reactivate button
+- [x] NPS scale on final screen
+- [x] Mobile-responsive modals
+- [x] `prefers-reduced-motion` support
 
 ### Quality Gate
 
 | Category | Check | Status |
 |----------|-------|--------|
-| **Functional** | Primary action obvious? Error states? Works on all iOS sizes? | ✅ |
-| **Visual** | Squint test passes? Spacing rhythm? Typography intentional? | ✅ |
-| **Persuasion** | Hook in 3 sec? 2+ trust signals? Objections addressed? | ✅ |
-| **Polish** | No orphaned words? Icons aligned? CTAs consistent? Something memorable? | ✅ |
+| **Functional** | All reason→offer routing works? Timer counts down? | ✅ |
+| **Visual** | Coupon card visible? Thumbnails load? | ✅ |
+| **Persuasion** | "For life" framing present? Exact $ amounts? | ✅ |
+| **Polish** | Multi-select works? NPS saves? | ✅ |
 
 ### Side-by-Side Test
 
-Compared against Revolut, Wise, Mercury:
+Compared against Clay, ElevenLabs, BoldVoice:
 
 | Criteria | Score |
 |----------|-------|
-| Polish (details, alignment) | ✅ Match |
-| Clarity (hierarchy, readability) | ✅ Match |
-| Uniqueness (memorable elements) | ✅ Exceed (breathing screens + specific trust copy) |
-| Usability (obvious actions) | ✅ Match |
+| Win Strategies implemented | ✅ 6/8 from steal list |
+| Specificity (exact copy/numbers) | ✅ All offers have exact $ |
+| Uniqueness | ✅ Thumbnails + FOR LIFE combo |
+| Usability | ✅ Multi-select, clear paths |
 
-**Result:** 4/4 criteria met or exceeded.
+**Result:** Exceeds references by combining best tactics from multiple sources.
 
 ---
 
 ## Key Takeaways
 
-1. **Research depth matters:** 172 results reviewed, 8 deep dives — found tactics like Wise's objection framing that wouldn't appear in first 10 results
+1. **"FOR LIFE" > "for 3 months"** — Permanence removes the "temporary fix" objection. Clay's "25% OFF FOR LIFE" outperforms time-limited discounts.
 
-2. **Adjacent industries help:** Healthcare onboarding (One Medical) gave us camera guide idea for documents
+2. **Thumbnails > Text lists** — ElevenLabs showing actual UI screenshots triggers stronger loss aversion than bullet points of feature names.
 
-3. **Steal List drives decisions:** Every unique element traces back to a specific reference and reason
+3. **Multi-select > Single radio** — Users often have 2-3 reasons for leaving. Forcing single choice loses data AND feels restrictive. Use checkboxes.
 
-4. **Specificity builds trust:** "FDIC insured up to $250,000" > "Your money is safe"
+4. **Exact $ > Percentage** — "$149.99 → $99.99 (save $50)" with strikethrough is more persuasive than "33% off." Anchoring matters.
 
-5. **The soul is small:** Three things make it memorable — breathing screens, honest time estimate, benefit-framed copy. Not a complete redesign.
+5. **"2 days before" beats "we'll remind you"** — Specific timing removes anxiety about surprise charges. Vague promises don't.
+
+6. **NPS on exit predicts win-back** — Users who rate 7+ on "likelihood to return" are priority win-back candidates. Spotify does this.

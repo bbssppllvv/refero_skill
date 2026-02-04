@@ -40,7 +40,33 @@ git clone https://github.com/bbssppllvv/refero_skill.git .cursor/skills/refero-d
 
 ## Requirements
 
-- [Refero MCP server](https://refero.design) for design research tools
+This skill uses **Refero MCP** — a design research tool with 150K+ screens and flows from real products.
+
+### Get Refero MCP
+
+1. Go to [refero.design](https://refero.design)
+2. Sign up for API access
+3. Add to your MCP config:
+
+```json
+{
+  "mcpServers": {
+    "refero": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/refero-mcp"],
+      "env": {
+        "REFERO_API_KEY": "your-api-key"
+      }
+    }
+  }
+}
+```
+
+Config locations:
+- **Claude Code**: `~/.claude/claude_desktop_config.json`
+- **Cursor**: `.cursor/mcp.json` in your project
+
+Without Refero MCP, the skill's research tools (`search_screens`, `get_screen`, etc.) won't be available.
 
 ## Usage
 
