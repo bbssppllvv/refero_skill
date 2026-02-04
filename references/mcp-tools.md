@@ -1,16 +1,14 @@
 # Refero MCP Tools Reference
 
-Refero has 5 tools. This document covers detailed usage for each.
+Refero MCP has 5 tools. Tool names use `refero_*_tool` format (e.g., `refero_search_screens_tool`).
 
-## `search_screens` — Visual Exploration
+## `refero_search_screens_tool` — Visual Exploration
 
 **Best for:** Single screens, specific UI patterns, visual inspiration.
 
 **Parameters:**
 - `query` — semantic search (required)
-- `platform` — `"ios"` | `"web"` | `"all"` (default: all)
-- `limit` — results per page, up to 50 (default: 20)
-- `offset` — for pagination
+- `platform` — `"ios"` | `"web"` (required)
 
 **Query examples (simple):**
 ```
@@ -36,9 +34,13 @@ Refero has 5 tools. This document covers detailed usage for each.
 
 ---
 
-## `search_flows` — Journey Understanding
+## `refero_search_flows_tool` — Journey Understanding
 
 **Best for:** Multi-step processes, user journeys, flow logic.
+
+**Parameters:**
+- `query` — semantic search (required)
+- `platform` — `"ios"` | `"web"` (required)
 
 **Query examples:**
 ```
@@ -55,11 +57,14 @@ Refero has 5 tools. This document covers detailed usage for each.
 
 ---
 
-## `get_screen` — Deep Dive on Specific Screen
+## `refero_get_screen_tool` — Deep Dive on Specific Screen
 
 **Best for:** Detailed analysis after finding promising examples in search.
 
-**Key parameters:**
+**Parameters:**
+- `screen_id` — ID from search results (required)
+
+**Optional parameters:**
 
 **`image_size`** — choose wisely:
 | Value | When to use | Size |
@@ -68,17 +73,20 @@ Refero has 5 tools. This document covers detailed usage for each.
 | `"thumbnail"` | Need to visually evaluate layout | ~30-100 KB |
 | `"full"` | Need fine UI details (icons, typography, exact spacing) | ~400KB-2MB |
 
-**`include_similar: true`** — get similar screens from other apps. Excellent for expanding research and seeing alternative approaches.
+**`include_similar: true`** — get similar screens from other apps.
 
 **`similar_limit`** — how many similar screens (default: 4, max: 20)
 
-**Batch requests:** Use `screen_ids: [...]` to fetch multiple screens at once.
-
 ---
 
-## `get_flow` — Complete Journey Analysis
+## `refero_get_flow_tool` — Complete Journey Analysis
 
 **Best for:** Understanding end-to-end user experience after finding a flow in search.
+
+**Parameters:**
+- `flow_id` — ID from search results (required)
+
+**Note:** Does NOT support `image_size` parameter. Returns text descriptions only.
 
 Returns:
 - All screens with full descriptions
@@ -86,11 +94,9 @@ Returns:
 - User problem description
 - Related search queries
 
-**Batch requests:** Use `flow_ids: [...]` for multiple flows.
-
 ---
 
-## `get_design_guidance` — AI-Powered Best Practices
+## `refero_get_design_guidance_tool` — AI-Powered Best Practices
 
 **Best for:** When you're stuck, starting fresh, or need a "second opinion." Takes ~15-30 seconds.
 
@@ -126,11 +132,15 @@ question: "How to create a converting paywall for a photo app?"
 - Combine multiple aspects: `"fintech onboarding ios"` vs just `"onboarding"`
 
 **Efficiency:**
-- Use batch requests (`screen_ids`, `flow_ids`) when fetching multiple items
-- Start with `image_size: "none"` — descriptions are usually sufficient
+- Text descriptions from `get_flow` and `get_screen` are usually sufficient
+- Use `image_size` only for `get_screen` when visuals needed
 - Use `include_similar: true` to discover related approaches
 
 **Platform filter:**
-- Use `platform: "ios"` for mobile app patterns
-- Use `platform: "web"` for web app/site patterns
-- Use `platform: "all"` when exploring broadly
+- `platform: "ios"` — required for mobile app patterns
+- `platform: "web"` — required for web app/site patterns
+
+**Common errors:**
+- Missing `platform` → add `platform: "ios"` or `platform: "web"`
+- `image_size` on `get_flow` → not supported, remove parameter
+- `limit`/`num_results` on search → not supported, pagination handled automatically

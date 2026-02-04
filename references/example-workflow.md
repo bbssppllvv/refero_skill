@@ -108,47 +108,34 @@ Flow patterns discovered:
 ```
 📊 RESEARCH SUMMARY
 ────────────────────────────────────────
-Queries executed: 8 different angles (broad, company, element, adjacent)
-Flows analyzed: 8 full deep-dives with exact copy captured
-Screens analyzed: 200+ in search results
+Queries: 8 | Screens analyzed: 200+ | Deep dives: 8 flows
 
-STRUCTURE PATTERNS:
-  • 5-8 step flow standard
-  • Modal-based, consequence screen before final confirm
-  • "Resume" button immediately visible post-cancel
+WHAT I FOUND:
 
-🎨 VISUAL INSPIRATION:
-  • Typography: 20-28px headlines, empathetic tone
-  • Color: Keep = Primary, Cancel = Ghost
-  • Details: Thumbnail previews of lost features (not just text)
-  • Vibe: Respectful, not desperate
+  Flow structure:
+  • Clay — 7-step modal flow
+  • ElevenLabs — 6-step modal flow  
+  • Spotify — 8-step flow
+  • Most use: consequence screen before final confirm
 
-✨ WIN STRATEGIES (specific, not generic):
+  Discount presentation (varies significantly):
+  • Clay: "25% OFF FOR LIFE" — text on ticket-style graphic
+  • BoldVoice: "$149.99" strikethrough → "$99.99" 
+  • TikTok: "YOU WON THE BIGGEST DISCOUNT" with coupon visual
 
-  1. Clay — "25% OFF FOR LIFE" (not "25% off")
-     WHY: "For life" removes objection that it's a temporary fix
-     
-  2. ElevenLabs — Feature thumbnails in consequence screen
-     WHY: Seeing actual UI screenshots triggers stronger loss aversion than text list
-     
-  3. ElevenLabs — Multi-select checkboxes for reasons (not radio buttons)
-     WHY: Users often have 2-3 reasons; forcing single choice loses data + feels restrictive
-     
-  4. BoldVoice — "$149.99" strikethrough next to "$99.99"
-     WHY: Anchoring makes savings feel larger; exact dollar amount more persuasive than %
-     
-  5. TikTok — "YOU WON THE BIGGEST DISCOUNT" with coupon visual
-     WHY: Gamification reframes cancellation flow as reward, not loss
-     
-  6. ClassPass — "We'll send you a reminder 2 days before your trial ends"
-     WHY: Removes #1 anxiety (surprise charge) with specific timing
+  Feature loss display:
+  • Most: bullet list of feature names
+  • ElevenLabs: actual UI thumbnails (screenshots of features)
 
-⚠️ OBVIOUS STUFF (table stakes, everyone does):
-  • "Offer a discount" — generic
-  • "Ask for cancellation reason" — generic
-  • "Show what you'll lose" — generic
+  Reason collection:
+  • Clay, Spotify: radio buttons (single select)
+  • ElevenLabs: checkboxes (multi-select)
 
-❓ STILL NEED: Win-back email timing (out of scope)
+  Specific copy that stood out:
+  • ClassPass: "We'll send you a reminder 2 days before your trial ends"
+  • Clay: "You won't be billed again." (purple accent)
+
+GAPS: Win-back email timing not covered
 ────────────────────────────────────────
 ```
 
@@ -331,14 +318,14 @@ Compared against Clay, ElevenLabs, BoldVoice:
 
 ## Key Takeaways
 
-1. **"FOR LIFE" > "for 3 months"** — Permanence removes the "temporary fix" objection. Clay's "25% OFF FOR LIFE" outperforms time-limited discounts.
+1. **Clay uses "FOR LIFE"** — "25% OFF FOR LIFE" instead of time-limited discount
 
-2. **Thumbnails > Text lists** — ElevenLabs showing actual UI screenshots triggers stronger loss aversion than bullet points of feature names.
+2. **ElevenLabs shows thumbnails** — actual UI screenshots of features, not text list
 
-3. **Multi-select > Single radio** — Users often have 2-3 reasons for leaving. Forcing single choice loses data AND feels restrictive. Use checkboxes.
+3. **ElevenLabs uses multi-select** — checkboxes for reasons, not single radio
 
-4. **Exact $ > Percentage** — "$149.99 → $99.99 (save $50)" with strikethrough is more persuasive than "33% off." Anchoring matters.
+4. **BoldVoice shows exact $** — "$149.99 → $99.99" with strikethrough
 
-5. **"2 days before" beats "we'll remind you"** — Specific timing removes anxiety about surprise charges. Vague promises don't.
+5. **ClassPass gives specific timing** — "2 days before your trial ends"
 
-6. **NPS on exit predicts win-back** — Users who rate 7+ on "likelihood to return" are priority win-back candidates. Spotify does this.
+6. **Spotify asks NPS on exit** — "How likely to return?" for win-back targeting

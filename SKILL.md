@@ -344,35 +344,23 @@ Raw collection of 50-100 references. Don't filter yet—gather everything potent
 ```
 📊 RESEARCH SUMMARY
 ────────────────────────────────────────
-Queries executed: [list with result counts]
-Screens analyzed: X total (Y full, Z thumbnails)
+Queries: [count] | Screens analyzed: [count]
 
-STRUCTURE PATTERNS:
-  • [layout / components / information flow]
-
-🎨 VISUAL INSPIRATION:
-  • Typography: [what fonts/weights/treatments stood out]
-  • Color: [palettes that felt right for this context]
-  • Spacing: [tight/airy, rhythm observations]
-  • Details: [shadows, borders, radii, micro-details]
-  • Vibe: [premium/playful/minimal/technical]
-
-✨ CLEVER FINDS (must be specific — not generic "best practices"):
-  • [Product] — [EXACT tactic: copy, numbers, conditions] → [WHY it works psychologically]
+WHAT I FOUND:
+  [Adapt to user's question — visual details, flow logic, patterns, etc.]
   
-  ❌ BAD: "Spotify — farewell playlist" (too vague)
-  ✅ GOOD: "Spotify — generates personalized 'Goodbye Mix' with user's top 10 songs, shown on final cancel screen with 'Take it with you' CTA"
+  Key findings (facts with sources):
+  • [Company] — [specific detail: exact copy, size, color, step count, etc.]
+  • [Company] — [specific detail]
+  
+  Notable differences:
+  • [what varies between products — if relevant to the task]
 
-🧠 CONVERSION TACTICS:
-  • [trust signals / urgency / social proof]
-
-❓ STILL NEED: [gaps in research]
+GAPS: [what wasn't found]
 ────────────────────────────────────────
 ```
 
-**If "Clever Finds" is empty — you haven't researched deeply enough.** Keep looking until you find something that surprises you.
-
-**Depth check:** Did you look beyond page 1? Did you find at least one product you've never heard of? If not, go deeper.
+**Quality check:** Every finding should be a fact you observed, not an opinion. Include source (company/product name). Be specific — "20px font" not "large font", "5-step flow" not "short flow".
 
 ---
 
