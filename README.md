@@ -6,6 +6,14 @@ Every AI agent has the same problem: it draws UI from training data averages. Th
 
 This skill changes that.
 
+## Install
+
+```bash
+npx skills add https://github.com/bbssppllvv/refero_skill
+```
+
+Requires [Refero MCP](#setup-refero-mcp) to connect your agent to the design library.
+
 ## What it does
 
 **Research.** Before creating anything, your agent searches [Refero](https://refero.design) — 150,000+ screens and 6,000+ flows from products like Stripe, Linear, and Notion. Not generic best practices. Specific solutions that shipped.
@@ -25,17 +33,9 @@ This skill changes that.
 | Default colors and layouts | Intentional craft decisions |
 | Looks AI-generated | Looks designed |
 
-## Install
-
-```bash
-npx skills add https://github.com/bbssppllvv/refero_skill
-```
-
-Requires Refero MCP to connect your agent to the design library.
-
 ---
 
-<details>
+<details id="setup-refero-mcp">
 <summary>Setup Refero MCP</summary>
 
 ### 1. Get your token
