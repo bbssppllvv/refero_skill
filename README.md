@@ -18,7 +18,13 @@ Without this data, AI agents guess. They produce "safe" designs that look like e
 
 ---
 
-**Also in this skill:** Craft guides on typography, color, spacing, motion, icons. Anti-slop rules to avoid the generic AI look. A complete methodology from discovery through implementation with quality gates.
+**Also in this skill:**
+
+**Craft knowledge.** Deep guides on typography, color, spacing, motion, and icons. Letter-spacing rules, color token systems, animation timing curves. The details that separate polished products from rough prototypes.
+
+**Anti-slop rules.** Explicit guidance to avoid the generic AI look: no default indigo, no blob backgrounds, no hero-features-pricing-FAQ templates. What makes design feel human versus generated.
+
+**Methodology.** A complete workflow from discovery questions through research, analysis, and implementation. Quality gates and side-by-side validation against real products.
 
 ## Install
 
