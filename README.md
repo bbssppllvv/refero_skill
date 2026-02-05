@@ -4,19 +4,30 @@
 
 **Design with data, not defaults.**
 
-Every AI agent has the same problem: it draws UI from training data averages. The result? Generic layouts, safe color choices, patterns you've seen a thousand times. Design that looks "AI-generated."
+AI agents design from training data averages. The result? Generic layouts, safe colors, patterns you've seen a thousand times.
 
-This skill changes that.
+This skill gives your agent access to real design research.
 
-## What it does
+## Research — the core
 
-**Research.** Before creating anything, your agent searches [Refero](https://refero.design) — 150,000+ screens and 6,000+ flows from products like Stripe, Linear, and Notion. Not generic best practices. Specific solutions that shipped.
+Before creating anything, your agent searches [Refero](https://refero.design):
 
-**Craft.** The skill includes deep guides on typography, color, spacing, motion, and icons — the details that separate polished products from rough ones. Letter-spacing rules. Color token systems. Animation timing. The stuff AI usually gets wrong.
+- **150,000+ screens** from Stripe, Linear, Notion, Figma, and thousands more
+- **6,000+ user flows** — complete journeys, not isolated screens
+- **Rich metadata** on every screen: components, patterns, typography, colors
+- **Semantic search** that finds any pattern, any solution, any approach
 
-**Anti-slop.** Explicit rules to avoid the "AI look": no default indigo, no blob backgrounds, no generic hero layouts. Your agent learns what makes design feel human and intentional.
+If a design pattern exists in the wild, your agent will find it. Pricing page with annual toggle? Onboarding flow for fintech? Dark mode dashboard with data tables? It's there.
 
-**Methodology.** A complete workflow from discovery questions through research, analysis, and implementation — with quality gates and side-by-side testing against references.
+This solves problems regular AI agents can't touch — because they don't have the data.
+
+## Also included
+
+**Craft guides** — Typography, color, spacing, motion, icons. The details that separate polished products from rough ones.
+
+**Anti-slop rules** — No default indigo, no blob backgrounds, no generic layouts. What makes design feel human.
+
+**Methodology** — Discovery → Research → Analyze → Design → Implement. Quality gates and validation.
 
 ## The shift
 
