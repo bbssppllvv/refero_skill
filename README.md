@@ -4,39 +4,13 @@
 
 **Design with data, not defaults.**
 
-AI agents design from training data averages. The result? Generic layouts, safe colors, patterns you've seen a thousand times.
+AI agents design from training data averages — generic layouts, safe colors, patterns you've seen a thousand times. This skill changes that.
 
-This skill gives your agent access to real design research.
+Before creating anything, your agent searches [Refero](https://refero.design): 150,000+ screens and 6,000+ user flows from Stripe, Linear, Notion, Figma, and thousands more. Rich metadata on every screen. Semantic search that finds any pattern, any solution, any approach.
 
-## Research — the core
+If a design pattern exists in the wild, your agent will find it. Pricing page with annual toggle? Onboarding flow for fintech? Dark mode dashboard with data tables? It's there. This solves problems regular AI agents can't touch — because they don't have the data.
 
-Before creating anything, your agent searches [Refero](https://refero.design):
-
-- **150,000+ screens** from Stripe, Linear, Notion, Figma, and thousands more
-- **6,000+ user flows** — complete journeys, not isolated screens
-- **Rich metadata** on every screen: components, patterns, typography, colors
-- **Semantic search** that finds any pattern, any solution, any approach
-
-If a design pattern exists in the wild, your agent will find it. Pricing page with annual toggle? Onboarding flow for fintech? Dark mode dashboard with data tables? It's there.
-
-This solves problems regular AI agents can't touch — because they don't have the data.
-
-## Also included
-
-**Craft guides** — Typography, color, spacing, motion, icons. The details that separate polished products from rough ones.
-
-**Anti-slop rules** — No default indigo, no blob backgrounds, no generic layouts. What makes design feel human.
-
-**Methodology** — Discovery → Research → Analyze → Design → Implement. Quality gates and validation.
-
-## The shift
-
-| Without | With |
-|---------|------|
-| Guesses from training data | Researches 150K+ real screens |
-| Generic "best practices" | Specific patterns that convert |
-| Default colors and layouts | Intentional craft decisions |
-| Looks AI-generated | Looks designed |
+The skill also includes craft guides (typography, color, spacing, motion), anti-slop rules to avoid the generic AI look, and a complete methodology from discovery through implementation.
 
 ## Install
 
