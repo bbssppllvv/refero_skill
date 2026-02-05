@@ -1,3 +1,5 @@
+![Refero Design Skill](assets/banner.png)
+
 # Refero Design Skill
 
 **Design with data, not defaults.**
