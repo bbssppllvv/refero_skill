@@ -12,6 +12,8 @@ Before creating anything, your agent searches [Refero](https://refero.design) �
 
 Not just screenshots. Every screen has rich metadata: components, patterns, typography, colors, layout structures. Your agent doesn't just see designs — it understands them.
 
+Complete user flows, not isolated screens. 6,000+ journeys broken down step by step — what each screen does, what content it shows, how users move through the experience. Onboarding, checkout, cancellation, upgrade — see exactly how the best products guide their users.
+
 Semantic search that finds anything. Pricing page with annual toggle? Fintech onboarding? Dark mode dashboard? Cancellation flow that reduces churn? If the pattern exists, your agent will find it. Research that takes designers hours — done in seconds.
 
 Without this data, AI agents guess. They produce "safe" designs that look like everything else. With Refero, your agent researches first, then designs with confidence.
