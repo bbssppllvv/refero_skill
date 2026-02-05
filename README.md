@@ -4,23 +4,21 @@
 
 **Design with data, not defaults.**
 
-AI agents design from training data averages — generic layouts, safe colors, patterns you've seen a thousand times. This skill gives your agent something it never had: access to real design research.
+AI agents design from training data averages. Generic layouts, safe colors, patterns you've seen a thousand times. This skill gives your agent something it never had: access to real design research.
 
 ## Real-time design research
 
-Before creating anything, your agent searches [Refero](https://refero.design) — 150,000+ screens and 6,000+ user flows from Stripe, Linear, Notion, Figma, Vercel, and thousands of the best products ever built.
+Before creating anything, your agent searches [Refero](https://refero.design): 150,000+ screens and 6,000+ user flows from Stripe, Linear, Notion, Figma, Vercel, and thousands of the best products ever built.
 
-Not just screenshots. Every screen has rich metadata: components, patterns, typography, colors, layout structures. Your agent doesn't just see designs — it understands them.
+Not just screenshots. Every screen has rich metadata: components, patterns, typography, colors, layout structures. Your agent doesn't just see designs, it understands them. User flows are broken down step by step: what each screen does, what content it shows, how users move through the experience.
 
-Complete user flows, not isolated screens. 6,000+ journeys broken down step by step — what each screen does, what content it shows, how users move through the experience. Onboarding, checkout, cancellation, upgrade — see exactly how the best products guide their users.
-
-Semantic search that finds anything. Pricing page with annual toggle? Fintech onboarding? Dark mode dashboard? Cancellation flow that reduces churn? If the pattern exists, your agent will find it. Research that takes designers hours — done in seconds.
+Semantic search that finds anything. Pricing page with annual toggle? Fintech onboarding? Dark mode dashboard? Cancellation flow that reduces churn? If the pattern exists, your agent will find it. Research that takes designers hours, done in seconds.
 
 Without this data, AI agents guess. They produce "safe" designs that look like everything else. With Refero, your agent researches first, then designs with confidence.
 
 ---
 
-**Also in this skill:** Craft guides on typography, color, spacing, motion, icons — the details AI usually gets wrong. Anti-slop rules to avoid the generic AI look. A complete methodology from discovery through implementation with quality gates.
+**Also in this skill:** Craft guides on typography, color, spacing, motion, icons. Anti-slop rules to avoid the generic AI look. A complete methodology from discovery through implementation with quality gates.
 
 ## Install
 
